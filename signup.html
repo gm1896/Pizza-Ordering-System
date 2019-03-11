@@ -1,0 +1,145 @@
+<html>
+   <head>
+       <title>SIGN UP|Pizzeria</title>
+	   <link type="text/css" rel="stylesheet" href="stylesheet1.css">
+	   <script>
+function myFunction() {
+    document.getElementById("myForm").reset();
+}
+
+
+function validateForm()
+{
+var x=document.login.email.value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+
+var y=document.login.contact.value;
+
+
+var user=document.login.name.value;
+var user=user.trim();
+
+var pass=document.login.password.value;
+<!--var pass=pass.trim();-->
+
+<!--var uzip=document.login.uzip.value;-->
+<!--var uzip=uzip.trim();-->
+
+var add=document.login.add.value;
+<!--var add=add.trim();-->
+
+var contact=document.login.contact.value;
+<!--var contact=contact.trim();-->
+
+var email=document.login.email.value;
+
+
+if(user == '')
+{
+document.getElementById('error').innerHTML="Please Enter Username";
+return false;
+}
+if(pass == '')
+{
+document.getElementById('error').innerHTML="Please Enter Password";
+return false;
+}
+
+if(email == '')
+{
+document.getElementById('error').innerHTML="Please Enter Email";
+return false;
+}
+if(add == '')
+{
+document.getElementById('error').innerHTML="Please Enter Address";
+return false;
+}
+if(contact == '')
+{
+document.getElementById('error').innerHTML="Please Enter Contact";
+return false;
+}
+<!--if(uzip == '')-->
+<!--{-->
+<!--document.getElementById('error').innerHTML="Please Enter uzip";-->
+<!--return false;-->
+<!--}-->
+
+
+if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length)
+{
+alert("Not a valid e-mail address");
+<!--document.getElementById('error').innerHTML="Not a valid e-mail address";-->
+return false;
+}
+if(isNaN(y)||y.indexOf(" ")!=-1||y.length>10||y.length<10)
+{
+alert("Enter numeric value/number should be 10 digits")
+return false; 
+}
+
+
+}
+
+
+</script>
+<meta http-equiv="Cache-Control" content="no-store" />
+   </head>
+   <body>
+       <div id="header">
+		   <h1>THE NEW EASTERN PIZZA's</h1>
+		</div>
+		
+		<div id="navigation">
+		
+		    <ul>
+			    <li><a href="index.php" >Home</a></li>
+				<li><a href="table1.php" >Menu</a></li>
+				<li><a href="login2.php" class="orderpage">Order</a></li>
+			    <li><a href="about.php">About</a></li>
+				<li><a href="contact.php">Contact Us</a></li>
+					
+			</ul>
+		</div>
+     
+	    <div id="wrapper">
+		
+		<p1>SignUp</p1><br><br>
+		
+		<form action="addnewuser.php" method="POST" id="myForm" name="login" onSubmit="return validateForm()">
+        <div  id="signupcontent">
+		      <!-- <p1>SignUp</p1><br><br> -->
+			  
+			  <div id="error" align="center"></div>
+			  
+			  <input type="text" class="signupD" name="name" placeholder="Enter Name" ><br><br>
+			  <input type="text" class="loginD" name="email" placeholder="Enter Email-Id" ><br><br>
+			  <input type="text" class="loginD" name="add" placeholder="Enter Address" ><br><br>
+			 <!-- <input type="text" class="loginD" name="uzip" placeholder="Enter Pincode" ><br><br>  -->
+			  <input type="password" class="loginD" name="password" placeholder="Enter Password" ><br><br>
+			  <input type="text" class="loginD" name="contact" placeholder="Enter Mobile no" ><br><br><br>
+			  <input type="submit" class="Login" name="Submit" value="Submit"><br><br><br>
+			  
+			  
+			  
+		</div>
+		<div id="signupcontent1">
+		<img src="reset.jpg" onclick="myFunction()" value="Reset form" height="50" width="75">
+		</div>
+		</form>
+	    </div>
+		
+		<div id="footer">
+	                            <p1 class="highl">&copy 2014,The new eastern pizaa All right reserved.</p1><br> 
+                  The Pizza Hut name, logos, and related marks are trademarks of The New Eastern pizza's, Inc<br>
+               Get your pizza at your door step! Pizza Hut India delivers your favorite pizzas across 54 cities,<br>
+			   including Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad, Pune, and Chandigarh and many others.<br> 
+ Just call the TNEP Delivery Number - 9898 7988 for major cities or check the number to call in your city on our locator page<br>
+ 
+		</div>
+         
+		
+   </body>   
+</html>
